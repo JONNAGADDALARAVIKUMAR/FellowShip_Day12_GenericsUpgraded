@@ -2,15 +2,15 @@ package CheckMethods;
 
 public class GenericsCheckMethods<T extends Comparable<T>> {
 	
-	String firstStringValue, secondStringValue, thirdStringValue;
-	public GenericsCheckMethods(String firstStringValue, String secondStringValue, String thirdStringValue) {
+	T firstStringValue, secondStringValue, thirdStringValue;
+	public GenericsCheckMethods(T firstStringValue, T secondStringValue, T thirdStringValue) {
 		this.firstStringValue = firstStringValue;
 		this.secondStringValue = secondStringValue;
 		this.thirdStringValue = thirdStringValue;
 	}
 
-	public String checkString() {
-		String max = null;
+	public T checkMaxValue() {
+		T max = null;
 		if(firstStringValue.compareTo(secondStringValue) >= 0 && firstStringValue.compareTo(thirdStringValue) > 0)
 			max = firstStringValue;
 		else if(secondStringValue.compareTo(firstStringValue) >= 0 && secondStringValue.compareTo(thirdStringValue) > 0)
