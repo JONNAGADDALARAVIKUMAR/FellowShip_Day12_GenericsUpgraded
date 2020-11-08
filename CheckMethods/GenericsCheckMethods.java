@@ -22,9 +22,14 @@ public class GenericsCheckMethods<T extends Comparable<T>> {
 			max = secondStringValue;
 		else if(thirdStringValue.compareTo(firstStringValue) >= 0 && thirdStringValue.compareTo(secondStringValue) >= 0)
 			max = thirdStringValue;
+		printMax(max);
 		return max;
 	}
 	
+	private void printMax(Comparable maxValue) {
+		System.out.println("Max Value From 3 Parameterised Test Case : "+maxValue);
+	}
+
 	// Can Test More than Three Values
 	T[] genericList;
 	public GenericsCheckMethods(T[] genericList) {
@@ -41,6 +46,11 @@ public class GenericsCheckMethods<T extends Comparable<T>> {
 				max = genericList[i];
 			}
 		}
+		printMaxInArray(max);
 		return max;
+	}
+
+	private void printMaxInArray(T maxValue) {
+		System.out.println("Max Value : "+maxValue);
 	}
 }
