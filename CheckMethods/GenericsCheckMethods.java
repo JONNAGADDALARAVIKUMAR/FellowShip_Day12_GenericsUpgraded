@@ -1,22 +1,22 @@
 package CheckMethods;
 
 public class GenericsCheckMethods<T extends Comparable<T>> {
-
-	Integer firstValue, secondValue, thirdValue;
-	public GenericsCheckMethods(Integer firstValue, Integer secondValue, Integer thirdValue) {
-		
-		this.firstValue = firstValue;
-		this.secondValue = secondValue;
-		this.thirdValue = thirdValue;
+	
+	Float firstFloatValue, secondFloatValue, thirdFloatValue;
+	public GenericsCheckMethods(double firstFloatValue, double secondFloatValue, double thirdFloatValue) {
+		this.firstFloatValue = (float) firstFloatValue;
+		this.secondFloatValue = (float) secondFloatValue;
+		this.thirdFloatValue = (float) thirdFloatValue;
 	}
-	public int checkInteger() {
-		Integer max = 0;
-		if(firstValue.compareTo(secondValue) >= 0 && firstValue.compareTo(thirdValue) >= 0)
-			max = firstValue;
-		else if(secondValue.compareTo(firstValue) >= 0 && secondValue.compareTo(thirdValue) >= 0)
-			max = secondValue;
-		else if(thirdValue.compareTo(firstValue) >= 0 && thirdValue.compareTo(secondValue) >= 0)
-			max = thirdValue;
+
+	public float checkFloat() {
+		Float max = (float) 0.0;
+		if(firstFloatValue.compareTo(secondFloatValue) >= 0 && firstFloatValue.compareTo(thirdFloatValue) > 0)
+			max = firstFloatValue;
+		else if(secondFloatValue.compareTo(firstFloatValue) >= 0 && secondFloatValue.compareTo(thirdFloatValue) > 0)
+			max = secondFloatValue;
+		else if(thirdFloatValue.compareTo(firstFloatValue) >= 0 && thirdFloatValue.compareTo(secondFloatValue) >= 0)
+			max = thirdFloatValue;
 		return max;
 	}
 
