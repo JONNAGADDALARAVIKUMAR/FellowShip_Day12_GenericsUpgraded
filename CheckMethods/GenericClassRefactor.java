@@ -1,17 +1,20 @@
 package CheckMethods;
 
-
-public class GenericsCheckMethods<T extends Comparable<T>> {
-
+public class GenericClassRefactor <T extends Comparable<T>> {
+	
+	GenericClassRefactor checkMax;
 	T firstStringValue, secondStringValue, thirdStringValue;
 	
-	public GenericsCheckMethods(T firstStringValue, T secondStringValue, T thirdStringValue) {
+	public GenericClassRefactor(T firstStringValue, T secondStringValue, T thirdStringValue) {
 		this.firstStringValue = firstStringValue;
 		this.secondStringValue = secondStringValue;
 		this.thirdStringValue = thirdStringValue;
 	}
-
-	public Comparable checkMaxValue() {
+	
+	
+	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public static <T extends Comparable> T genericClassMethodMax(T firstStringValue, T secondStringValue, T thirdStringValue) {
 		T max = null;
 		if(firstStringValue.compareTo(secondStringValue) >= 0 && firstStringValue.compareTo(thirdStringValue) > 0)
 			max = firstStringValue;
@@ -20,5 +23,11 @@ public class GenericsCheckMethods<T extends Comparable<T>> {
 		else if(thirdStringValue.compareTo(firstStringValue) >= 0 && thirdStringValue.compareTo(secondStringValue) >= 0)
 			max = thirdStringValue;
 		return max;
+		
 	}
+	public Comparable checkMax() {
+		
+		return (Comparable) checkMax.genericClassMethodMax(firstStringValue, secondStringValue, thirdStringValue);
+	}
+
 }

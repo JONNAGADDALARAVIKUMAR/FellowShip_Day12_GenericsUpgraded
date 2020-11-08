@@ -2,6 +2,8 @@ package mainPackage;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import CheckMethods.GenericClassRefactor;
 import CheckMethods.GenericsCheckMethods;
 
 @SuppressWarnings({ "unchecked", "rawtypes" })
@@ -156,36 +158,12 @@ public class GenericsTestCasesMain {
 	}
 	
 	@Test
-	public void firstIntMaxValueTestCase() { //Test Case for First Max Value
+	public void checkFirstIntegerNegitive1() { //Test case for first Integer Value Negative
 		
-		Integer[] genericArray = {29,34,7,65,39,47};
-		checkMethods = new GenericsCheckMethods(genericArray);
-		Comparable result =  checkMethods.checkMaximumInList();
-		Assert.assertNotEquals(29, result);
-	}
-	@Test
-	public void firstIntMaxValueActual() { //Actual Implementation for First Max Value
-		
-		Integer[] genericArray = {65,82,45,63,47,55,30,17};
-		checkMethods = new GenericsCheckMethods(genericArray);
-		Comparable result =  checkMethods.checkMaximumInList();
-		Assert.assertEquals(82, result);
+		GenericClassRefactor genericClassRefactor;
+		genericClassRefactor = new GenericClassRefactor(23,67,47);
+		Comparable result = genericClassRefactor.checkMax();
+		Assert.assertNotEquals(23, result);
 	}
 	
-	@Test
-	public void firstStringMaxValueTestCase() { //Test Case for Max Value
-		
-		String[] genericArray = {"Sheep", "Cow", "Horse", "Cat", "Lion", "Tiger"};
-		checkMethods = new GenericsCheckMethods(genericArray);
-		Comparable result =  checkMethods.checkMaximumInList();
-		Assert.assertNotEquals("Lion", result);
-	}
-	@Test
-	public void firstStringMaxValueActual() { //Actual Implementation for Max Value
-		
-		String[] genericArray = {"Sheep", "Cow", "Horse", "Cat", "Lion", "Tiger"};
-		checkMethods = new GenericsCheckMethods(genericArray);
-		Comparable result =  checkMethods.checkMaximumInList();
-		Assert.assertEquals("Tiger", result);
-	}
 }
