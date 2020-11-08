@@ -2,21 +2,21 @@ package CheckMethods;
 
 public class GenericsCheckMethods<T extends Comparable<T>> {
 	
-	Float firstFloatValue, secondFloatValue, thirdFloatValue;
-	public GenericsCheckMethods(double firstFloatValue, double secondFloatValue, double thirdFloatValue) {
-		this.firstFloatValue = (float) firstFloatValue;
-		this.secondFloatValue = (float) secondFloatValue;
-		this.thirdFloatValue = (float) thirdFloatValue;
+	String firstStringValue, secondStringValue, thirdStringValue;
+	public GenericsCheckMethods(String firstStringValue, String secondStringValue, String thirdStringValue) {
+		this.firstStringValue = firstStringValue;
+		this.secondStringValue = secondStringValue;
+		this.thirdStringValue = thirdStringValue;
 	}
 
-	public float checkFloat() {
-		Float max = (float) 0.0;
-		if(firstFloatValue.compareTo(secondFloatValue) >= 0 && firstFloatValue.compareTo(thirdFloatValue) > 0)
-			max = firstFloatValue;
-		else if(secondFloatValue.compareTo(firstFloatValue) >= 0 && secondFloatValue.compareTo(thirdFloatValue) > 0)
-			max = secondFloatValue;
-		else if(thirdFloatValue.compareTo(firstFloatValue) >= 0 && thirdFloatValue.compareTo(secondFloatValue) >= 0)
-			max = thirdFloatValue;
+	public String checkString() {
+		String max = null;
+		if(firstStringValue.compareTo(secondStringValue) >= 0 && firstStringValue.compareTo(thirdStringValue) > 0)
+			max = firstStringValue;
+		else if(secondStringValue.compareTo(firstStringValue) >= 0 && secondStringValue.compareTo(thirdStringValue) > 0)
+			max = secondStringValue;
+		else if(thirdStringValue.compareTo(firstStringValue) >= 0 && thirdStringValue.compareTo(secondStringValue) >= 0)
+			max = thirdStringValue;
 		return max;
 	}
 
